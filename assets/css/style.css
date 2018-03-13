@@ -1,0 +1,28 @@
+.hangman-picture, .estus{
+    background-color: none;
+    width: 100%;
+    height: auto;
+}
+
+
+#title{
+    margin-top: 0px;
+    opacity: 1;
+    background-color: #101010;
+    padding-top: 0px;
+}
+
+.container{
+    margin-top: 200px;
+}
+
+body {
+    background-image: url("../images/background.jpg");
+    color: #fff;
+}
+
+.block{
+    background-color: #101010; 
+    opacity:0.8;
+    padding: 15px;
+}

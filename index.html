@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="assets/javascript/game.js"></script>
+    <meta charset="UTF-8">
+
+    <title>Dark Souls Hangman</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-3">
+                <div class="row">
+                    <img class="hangman-picture" src="assets\images\hangman-5.jpg">
+                </div>
+                <div class="row">
+                    <div class="block text-center descriptor">
+                        <h4>Your Ember is strong, take care not to lose it Chosen Undead.</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xs-6">
+                <div class="row">
+                    <div class="col-xs-12 text-center">
+                        <img class="hangman-picture" src="assets\images\logo.jpg">
+                        <h1 class="block" id="title">
+                            Hangman Edition:
+                            <br>Press Any Key to Start
+                        </h1>
+                        <!-- <h1>_ _ _ _  _ _ _ _</h1>  -->
+                    </div>
+                </div>
+
+                <div class="row missed-letters">
+                    <div class="col-xs-12 text-center block">
+                        <p>Select letter's using the keyboard to guess the Dark Soul's boss name above. You only have 5 "Guesstus
+                            Flasks", so choose wisely.</p>
+                        <h3>Missed Letters: </h3>
+                        <br>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xs-3">
+                <div class="row">
+                    <div class="col-xs-12 block">
+                        <h3 id="wins">Wins: 0</h3>
+                        <h3 id="losses"> Losses: 0</h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 text-center">
+                        <img class="estus" src="assets\images\estus-flask-5.png">
+                        <h3 class="block">Guestus Flasks Remaining: 5</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>
