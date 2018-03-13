@@ -26,3 +26,8 @@ body {
     opacity:0.8;
     padding: 15px;
 }
+
+.midSection{
+    padding-left: 0px;
+    padding-right: 0px;
+}
