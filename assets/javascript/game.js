@@ -2,13 +2,13 @@
 var guessObject = [
 
     {
-        status: "There's so very little human left in you, any more of this torment, and you'll surely crack and go hollow.",
+        status: "There's so very little human left in you. With any more of this torment, and you'll surely crack and go hollow.",
         statusPic: "assets/images/hangman-1.jpg",
         estusPic: "assets/images/estus-flask-1.png",
     },
 
     {
-        status: "With each death",
+        status: "With each death more of yourself fades away. You struggle to remember why it is that you fight.",
         statusPic: "assets/images/hangman-2.png",
         estusPic: "assets/images/estus-flask-2.png",
     },
@@ -33,13 +33,14 @@ var guessObject = [
 ];
 
 var bossNames = ["ASYLUM DEMON", "BELL GARGOYLE", "CAPRA DEMON", "CEASELESS DISCHARGE", "CENTIPEDE DEMON", "CHAOS WITCH QUELAAG", "FOUR KINGS", "GAPING DRAGON",
-    "GREAT GREY WOLF SIF", "GWYN LORD OF CINDER", "ORNSTEIN AND SMOUGH", "MOONLIGHT BUTTERFLY", "NITO", "SEATH THE SCALELESS", "TAURUS DEMON", "STRAY DEMON"
+    "GREAT GREY WOLF SIF", "GWYN LORD OF CINDER", "ORNSTEIN AND SMOUGH", "MOONLIGHT BUTTERFLY", "NITO", "SEATH THE SCALELESS", "TAURUS DEMON", "STRAY DEMON", "CROSSBREED PRISCILLA",
+    "DARK SUN GWYNDOLIN", "ARTORIAS THE ABYSSWALKER", "MANUS FATHER OF THE ABYSS"
 ];
 
 var wins = 0;
 var losses = 0;
 var firstRun = true;
-
+var guessesLeft = 5;
 var bossName = bossNames[Math.floor(Math.random() * bossNames.length)];
 var hangmanString = "";
 var missedGuesses = ["", "", "", "", ""];
@@ -103,6 +104,7 @@ document.onkeyup = function (event) {
         else {                                         // incorrect letter branch
             missedGuesses[guessedIncorrect] = userInput;
             guessedIncorrect++;
+            guessesLeft--;
 
             var missedLetterString = "Missed Letters: ";
             for (var i = 0; i < guessedIncorrect; i++) {
@@ -110,16 +112,19 @@ document.onkeyup = function (event) {
             }
 
             missedLetters.innerHTML = missedLetterString;
-
-            estusPic.setAttribute("src", guessObject[4 - guessedIncorrect].estusPic);
-            statusPic.setAttribute("src", guessObject[4 - guessedIncorrect].statusPic);
-            statusText.innerHTML = guessObject[4 - guessedIncorrect].status;
-            estusText.innerHTML = "Guestus Flasks Remaining: " + (4 - guessedIncorrect);
+            
+            if (guessesLeft > 0) {
+                estusPic.setAttribute("src", guessObject[guessesLeft - 1].estusPic);
+                statusPic.setAttribute("src", guessObject[guessesLeft - 1].statusPic);
+                statusText.innerHTML = guessObject[guessesLeft - 1].status;
+                estusText.innerHTML = "Guestus Flasks Remaining: " + (guessesLeft - 1);
+            }
 
             if (guessedIncorrect === 5) {
                 alert("You lose");
                 losses++;
                 isWin = false;
+                reset();
             }
         }
     }
@@ -132,19 +137,23 @@ function reset() {
     guessedIncorrect = 0;
     correctLetters = ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""];
     correctGuesses = 0;
+    guessesLeft = 5;
 
     estusPic.setAttribute("src", guessObject[4].estusPic);
     statusPic.setAttribute("src", guessObject[4].statusPic);
     statusText.innerHTML = guessObject[4].status;
     estusText.innerHTML = "Guestus Flasks Remaining: 4";
+    console.log("Misesed Letters set before");
+    missedLetters.innerHTML = "Missed Letters: ";
+    console.log("Missed letter after");
     initializeHangmanText();
 
     if (isWin)
         winText.innerHTML = "Wins: " + wins;
     else
-        lossText.innerHtml = "Loses: " + losses;
+        lossText.innerHTML = "Loses: " + losses;
 
-    missedLetters.innerHtml = "Missed Letters: ";
+
 
     hangmanLetters.innerHTML = hangmanString;
 }
