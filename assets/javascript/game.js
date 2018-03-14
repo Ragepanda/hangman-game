@@ -80,7 +80,11 @@ document.onkeyup = function (event) {
             correctLetters.includes(userInput)) {
         }
 
-        else if (userInput === ' ') {
+        else if (userInput === ' ' 
+            ||userInput === ''
+            || userInput === ''
+            || userInput === ''
+            || userInput === '') {
             alert("Spaces are invalid but won't count against you.");
         }
 
@@ -110,7 +114,7 @@ document.onkeyup = function (event) {
             }
 
             missedLetters.innerHTML = missedLetterString;
-            
+
             if (guessesLeft > 0) {
                 estusPic.setAttribute("src", guessObject[guessesLeft - 1].estusPic);
                 statusPic.setAttribute("src", guessObject[guessesLeft - 1].statusPic);
