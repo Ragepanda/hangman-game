@@ -78,7 +78,6 @@ document.onkeyup = function (event) {
     else {                                                        // Logic branch for all other key-up inputs
         if (missedGuesses.includes(userInput) ||
             correctLetters.includes(userInput)) {
-            alert("You have already picked this letter");
         }
 
         else if (userInput === ' ') {
@@ -94,7 +93,6 @@ document.onkeyup = function (event) {
             hangmanLetters.innerHTML = hangmanString;
 
             if (hangmanString.indexOf("_") === -1) {        /// Win condition is that there are no "_" characters in the hangman string
-                alert("Winner");
                 wins++;
                 isWin = true;
                 reset();
@@ -121,7 +119,6 @@ document.onkeyup = function (event) {
             }
 
             if (guessedIncorrect === 5) {
-                alert("You lose");
                 losses++;
                 isWin = false;
                 reset();
