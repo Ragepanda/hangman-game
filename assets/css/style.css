@@ -19,6 +19,12 @@
 body {
     background-image: url("../images/background.jpg");
     color: #fff;
+    column-gap: 30px;
+}
+
+.central-block{
+    background-color: #101010; 
+    opacity:0.8;
 }
 
 .block{
@@ -27,7 +33,7 @@ body {
     padding: 15px;
 }
 
-.midSection{
+/* .midSection{
     padding-left: 0px;
     padding-right: 0px;
-}
+} */
