@@ -1,4 +1,4 @@
-This is a Dark Souls themed hangman game that utilizes CSS/Bootstrap for a cleanly positioned UI and JQuery for input captures to make for a smooth, responsive experience.
+This is a Dark Souls themed hangman game that utilizes CSS/Bootstrap for a cleanly positioned UI and JQuery for input captures and JS for the game logic in order to make for a smooth, responsive experience.
 
 To play, follow this link: https://ragepanda.github.io/hangman/index.html
 
