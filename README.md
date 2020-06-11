@@ -2,6 +2,9 @@ This is a Dark Souls themed hangman game that utilizes CSS/Bootstrap for a clean
 
 To play, follow this link: https://ragepanda.github.io/hangman/index.html
 
+![Dark Souls Game](/assets/images/screenshot_4.png)
+Format: ![Alt Text](url)
+
 To play, press any keyboard input to get started on the landing page. From there type any letter of your choice within the alphabet to submit it as a guess. Once you have enough failed attempts, the game will reset and a win or loss will be added on. 
 
 
